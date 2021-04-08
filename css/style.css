@@ -1,0 +1,37 @@
+/* MIX */
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+header{
+  background-color: #000;
+  padding:10px;
+  height:10vh;
+}
+main{
+  background-color:#656565;
+  height:90vh;
+  display:flex;
+  flex-wrap: wrap;
+}
+/* /MIX */
+
+/* logo layout */
+.logo img{
+  height:40px;
+}
+/* /logo layout */
+.box{
+  padding:20px;
+  width:calc(100% / 5);
+  text-align: center;
+}
+.album{
+  height:150px;
+}
+.album img{
+  height:100%;
+  width:100%;
+  object-fit: contain;
+}
