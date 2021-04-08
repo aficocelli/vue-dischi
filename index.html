@@ -44,7 +44,7 @@
       <!-- main -->
       <main>
         <!-- main box -->
-        <div class="box" v-for="album in albums">
+        <div class="box" v-for="album in albums" v-if="(album.genre == selected) || (selected == '')">
           <div class="album">
             <img :src="album.poster" :alt="album.title">
           </div>
