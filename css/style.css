@@ -4,14 +4,25 @@
   padding:0;
   box-sizing: border-box;
 }
+body{
+  font-family: 'Lato', sans-serif;
+}
 header{
   background-color: #000;
   padding:10px;
   height:10vh;
+  display:flex;
+  align-items:center;
+}
+section{
+  height:10vh;
+  display:flex;
+  align-items:center;
+  justify-content: center;
 }
 main{
   background-color:#656565;
-  height:90vh;
+  height:80vh;
   display:flex;
   flex-wrap: wrap;
   overflow-y: auto;
@@ -20,10 +31,7 @@ main{
 /* /MIX */
 
 /* logo layout */
-.logo{
-  display:flex;
-  align-items:center;
-}
+
 .logo i{
   color:#1DB954;
   font-size:46px;
@@ -33,7 +41,7 @@ main{
   padding:20px;
   width:calc(100% / 5);
   text-align: center;
-  
+
 
 }
 .album{
@@ -46,11 +54,11 @@ main{
   object-fit: contain;
 }
 .box h1{
-  font-size:20px;
-}
-.box h2{
   font-size:18px;
 }
+.box h2{
+  font-size:16px;
+}
 .box p:first-of-type{
-  margin: 10px 0;
+  margin: 5px 0;
 }

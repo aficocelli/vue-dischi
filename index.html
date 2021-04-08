@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <!-- /google font -->
     <!-- fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <!-- /fontawesome -->
@@ -19,31 +23,41 @@
     <title>Vue Dischi Musicali</title>
   </head>
   <body>
-    <!-- header -->
-    <header>
-      <div class="logo">
-        <i class="fab fa-spotify"></i>
-      </div>
-    </header>
-    <!-- /header -->
-
-    <!-- main -->
-    <main id="root">
-      <!-- main box -->
-      <div class="box" v-for="album in albums">
-        <div class="album">
-          <img :src="album.poster" :alt="album.title">
+    <div id="root" class="container">
+      <!-- header -->
+      <header>
+        <div class="logo">
+          <i class="fab fa-spotify"></i>
         </div>
-        <h1>{{album.title}}</h1>
-        <h2>{{album.author}}</h2>
-        <p>{{album.genre}}</p>
-        <p>{{album.year}}</p>
-      </div>
-      <!-- /main box -->
+      </header>
+      <!-- /header -->
+      <!-- section options -->
+      <section>
+        <!-- select -->
+        <select id="genre-option">
+          <option value="">All</option>
+          <option v-for="genre in genreOption" value="">{{genre}}</option>
+        </select>
+        <!-- section options -->
+        <!-- /select -->
+      </section>
+      <!-- main -->
+      <main>
+        <!-- main box -->
+        <div class="box" v-for="album in albums">
+          <div class="album">
+            <img :src="album.poster" :alt="album.title">
+          </div>
+          <h1>{{album.title}}</h1>
+          <h2>{{album.author}}</h2>
+          <p>{{album.genre}}</p>
+          <p>{{album.year}}</p>
+        </div>
+        <!-- /main box -->
 
-    </main>
-    <!-- /main -->
-
+      </main>
+      <!-- /main -->
+    </div>
     <!-- js -->
     <script src="js/script.js" charset="utf-8"></script>
     <!-- /js -->
