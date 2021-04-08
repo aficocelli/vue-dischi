@@ -15,10 +15,11 @@ header{
   align-items:center;
 }
 section{
+  padding:20px;
   height:10vh;
   display:flex;
   align-items:center;
-  justify-content: center;
+  justify-content: space-between;
 }
 main{
   background-color:#656565;

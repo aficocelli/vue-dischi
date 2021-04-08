@@ -8,15 +8,20 @@ var app = new Vue({
 
     genreOption:[],
 
-    selected:""
+    selected:"",
+
+    ordered:""
   },
+
 
   mounted: function(){
 
-    let myThis = this;
+    var myThis = this;
+
     axios.get('https://flynn.boolean.careers/exercises/api/array/music')
     .then(function(response){
-      let orderedAlbums = response.data.response.sort((a, b)=> (a.year > b.year)? 1 : (a.year < b.year) ? -1 : (a.title > b.title)? 1 : (a.title < b.title)? -1 : 0 )
+
+      let orderedAlbums = response.data.response.sort((a, b)=> (a.year > b.year)? 1 : (a.year < b.year) ? -1 : (a.title > b.title)? 1 : (a.title < b.title)? -1 : 0 );
 
       myThis.albums = orderedAlbums;
 
@@ -33,7 +38,24 @@ var app = new Vue({
 
     });
 
+  },
 
+  computed: {
+
+    albumOrdinati: function(){
+
+      if(this.ordered == 1){
+
+         return this.albums.sort((a, b)=> (a.title > b.title)? 1 : (a.title < b.title)? - 1 : 0 );
+      } else if( this.ordered == 2) {
+
+        return this.albums.sort((a, b)=> (a.genre > b.genre)? 1 : (a.genre < b.genre)? - 1 : 0 );
+      } else{
+
+        return this.albums
+      }
+
+    }
 
 
   }
