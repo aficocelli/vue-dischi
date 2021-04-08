@@ -34,10 +34,11 @@
       <!-- section options -->
       <section>
         <!-- select -->
-        <select id="genre-option">
+        <select id="genre-option" v-model="selected">
           <option value="">All</option>
-          <option v-for="genre in genreOption" value="">{{genre}}</option>
+          <option v-for="genre in genreOption" :value="genre">{{genre}}</option>
         </select>
+        <p>hai selezionato {{selected}}</p>
         <!-- section options -->
         <!-- /select -->
       </section>

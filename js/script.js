@@ -6,8 +6,9 @@ var app = new Vue({
 
     albums: [],
 
-    genreOption:[]
+    genreOption:[],
 
+    selected:""
   },
 
   mounted: function(){
@@ -17,8 +18,6 @@ var app = new Vue({
     .then(function(response){
 
       myThis.albums = response.data.response;
-
-      console.log(myThis.albums);
 
       for(var i = 0; i < myThis.albums.length; i++){
 
@@ -30,7 +29,6 @@ var app = new Vue({
 
       }
 
-      console.log(myThis.genreOption);
 
     });
 
