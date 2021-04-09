@@ -47,12 +47,13 @@ var app = new Vue({
       if(this.ordered == 1){
 
          return this.albums.sort((a, b)=> (a.title > b.title)? 1 : (a.title < b.title)? - 1 : 0 );
-      } else if( this.ordered == 2) {
+      } else if(this.ordered == 2) {
 
         return this.albums.sort((a, b)=> (a.genre > b.genre)? 1 : (a.genre < b.genre)? - 1 : 0 );
-      } else{
+      } else {
 
-        return this.albums
+        return this.albums.sort((a, b)=> (a.year > b.year)? 1 : (a.year < b.year) ? -1 : (a.title > b.title)? 1 : (a.title < b.title)? -1 : 0 );
+
       }
 
     }
